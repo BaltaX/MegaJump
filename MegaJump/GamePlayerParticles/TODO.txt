@@ -1,0 +1,3 @@
+﻿TO-DO-lista för MegaJump
+
+Måste ta reda på om det bara är för att rita upp världen/skapa världen som vi använder tiles, dvs så att plötsligt inte spelaren börjar röra sig i tiles också?

@@ -27,8 +27,8 @@ namespace MegaJump
 
             //Set the screen size
             m_graphics.IsFullScreen = false;
-            m_graphics.PreferredBackBufferHeight = 1000;
-            m_graphics.PreferredBackBufferWidth = 1000;
+            m_graphics.PreferredBackBufferHeight = 960;
+            m_graphics.PreferredBackBufferWidth = 640;
             Content.RootDirectory = "Content";
 
         }
@@ -82,6 +82,17 @@ namespace MegaJump
             // Allows the game to exit
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
+            KeyboardState keyboardState = Keyboard.GetState();
+
+            if (keyboardState.IsKeyDown(Keys.Left))
+            {
+                m_mainModel.MovePlayerLeft();
+            }
+
+            if (keyboardState.IsKeyDown(Keys.Right))
+            {
+                m_mainModel.MovePlayerRight();
+            }
 
             m_mainModel.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
 
@@ -94,7 +105,7 @@ namespace MegaJump
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.Black);
+            GraphicsDevice.Clear(Color.White);
 
             m_mainView.Draw(m_mainModel, gameTime.ElapsedGameTime.TotalSeconds);
 

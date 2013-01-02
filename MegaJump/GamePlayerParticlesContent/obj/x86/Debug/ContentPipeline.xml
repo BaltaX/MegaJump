@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<XnaContent xmlns:Pipeline="Microsoft.Xna.Framework.Content.Pipeline">
+  <Asset Type="Pipeline:BuildItemCollection">
+    <Item>
+      <Source>Ball2.png</Source>
+      <Name>Ball2</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\Ball2.xnb</Output>
+      <Time>2013-01-01T23:51:13.561+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Line.png</Source>
+      <Name>Line</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\Line.xnb</Output>
+      <Time>2013-01-01T23:51:13.565+01:00</Time>
+    </Item>
+    <Item>
+      <Source>particle.png</Source>
+      <Name>particle</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\particle.xnb</Output>
+      <Time>2013-01-01T23:51:13.572+01:00</Time>
+    </Item>
+    <Item>
+      <Source>myFont.spritefont</Source>
+      <Name>myFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\myFont.xnb</Output>
+      <Time>2013-01-01T23:51:13.569+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Sprites.png</Source>
+      <Name>Sprites</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\Sprites.xnb</Output>
+      <Time>2013-01-02T16:59:46.1182+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Megaman.png</Source>
+      <Name>Megaman</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\Megaman.xnb</Output>
+      <Time>2013-01-02T21:37:44.433+01:00</Time>
+    </Item>
+    <BuildSuccessful>true</BuildSuccessful>
+    <Settings>
+      <TargetPlatform>Windows</TargetPlatform>
+      <TargetProfile>HiDef</TargetProfile>
+      <BuildConfiguration>Debug</BuildConfiguration>
+      <CompressContent>false</CompressContent>
+      <RootDirectory>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticlesContent\</RootDirectory>
+      <LoggerRootDirectory>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\</LoggerRootDirectory>
+      <IntermediateDirectory>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticlesContent\obj\x86\Debug\</IntermediateDirectory>
+      <OutputDirectory>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\</OutputDirectory>
+    </Settings>
+    <Assemblies>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.XImporter.dll</Key>
+        <Value>2010-08-23T12:41:18+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.VideoImporters.dll</Key>
+        <Value>2010-08-23T12:41:18+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.TextureImporter.dll</Key>
+        <Value>2010-08-23T12:41:18+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.FBXImporter.dll</Key>
+        <Value>2010-08-23T12:41:18+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.EffectImporter.dll</Key>
+        <Value>2010-08-23T12:41:18+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Program Files (x86)\Microsoft XNA\XNA Game Studio\v4.0\References\Windows\x86\Microsoft.Xna.Framework.Content.Pipeline.AudioImporters.dll</Key>
+        <Value>2010-08-23T12:41:18+02:00</Value>
+      </Assembly>
+      <Assembly>
+        <Key>C:\Windows\Microsoft.Net\assembly\GAC_32\Microsoft.Xna.Framework.Content.Pipeline\v4.0_4.0.0.0__842cf8be1de50553\Microsoft.Xna.Framework.Content.Pipeline.dll</Key>
+        <Value>2012-10-04T12:29:46.985+02:00</Value>
+      </Assembly>
+    </Assemblies>
+  </Asset>
+</XnaContent>

@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual C# Express 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GamePlayerParticles", "MegaJump\GamePlayerParticles\GamePlayerParticles.csproj", "{751D7414-8555-4427-898C-39D5C14A0BA2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MegaJump", "MegaJump\GamePlayerParticles\MegaJump.csproj", "{751D7414-8555-4427-898C-39D5C14A0BA2}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "GamePlayerParticlesContent", "MegaJump\GamePlayerParticlesContent\GamePlayerParticlesContent.contentproj", "{B8689DE5-B3E4-46CC-9E97-35C1DD323E20}"
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "MegaJumpContent", "MegaJump\GamePlayerParticlesContent\MegaJumpContent.contentproj", "{B8689DE5-B3E4-46CC-9E97-35C1DD323E20}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

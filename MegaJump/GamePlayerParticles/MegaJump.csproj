@@ -7,7 +7,7 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GamePlayerParticles</RootNamespace>
+    <RootNamespace>MegaJump</RootNamespace>
     <AssemblyName>GamePlayerParticles</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
@@ -108,6 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MasterController.cs" />
+    <Compile Include="Model\Level.cs" />
     <Compile Include="Model\MainModel.cs" />
     <Compile Include="Model\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -121,11 +122,13 @@
   <ItemGroup>
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png" />
+    <Content Include="TODO.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\GamePlayerParticlesContent\GamePlayerParticlesContent.contentproj">
-      <Name>GamePlayerParticlesContent</Name>
+    <ProjectReference Include="..\GamePlayerParticlesContent\MegaJumpContent.contentproj">
+      <Name>MegaJumpContent %28Content%29</Name>
       <XnaReferenceType>Content</XnaReferenceType>
+      <Project>{B8689DE5-B3E4-46CC-9E97-35C1DD323E20}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
