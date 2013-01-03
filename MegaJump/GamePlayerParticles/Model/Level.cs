@@ -18,7 +18,7 @@ namespace MegaJump.Model
 
         //Width and height
         internal const int levelWidth = 10;
-        internal const int levelHeight = 15;
+        internal const int levelHeight = 40;
 
         //The array of tiles
         internal Tile[,] m_tiles = new Tile[levelWidth, levelHeight];

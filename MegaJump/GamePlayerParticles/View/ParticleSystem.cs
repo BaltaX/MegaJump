@@ -76,7 +76,7 @@ namespace MegaJump.View
                     m_particles[i].Update(a_elapsedTimeTotalSeconds);
 
                     //Get view coordinates of particle
-                    Vector2 viewCoordinates = m_camera.translateCoordinates(m_particles[i].getPosition(), 1000, 1000);
+                    Vector2 viewCoordinates = m_camera.translateCoordinates(m_particles[i].getPosition(), 1000, 1000,64f);
 
                     //Create destination rectangle
                     Rectangle dest = new Rectangle((int)viewCoordinates.X, (int)viewCoordinates.Y, 20, 20);

@@ -43,11 +43,8 @@ namespace MegaJump.View
         internal void Draw(Model.MainModel a_mainModel, double a_elapsedTimeTotalSeconds)
         {
             //Variables used for drawing game
-            Vector2 modelPosition = a_mainModel.getPlayerPosition();
-            //float modelBallRadius = a_mainModel.getPlayerRadius();
-            Vector2 viewCoordinates = m_camera.translateCoordinates(modelPosition, m_windowHeight, m_windowWidth);
-            int viewLineDisplacementX = (int)(a_mainModel.getLineDisplacement() * m_windowWidth);
-            int viewLineDisplacementY = (int)(a_mainModel.getLineDisplacement() * m_windowHeight);
+            //Vector2 modelPosition = a_mainModel.getPlayerPosition();
+            
             m_tiles = a_mainModel.getTiles();
             
             //Destination rectangle for Megaman
@@ -55,11 +52,20 @@ namespace MegaJump.View
             //Get model coordinates for Megaman
             Vector2 megamanModelPos = a_mainModel.getPlayerPosition();
 
-            //Translate to model coordinates for megaman
-            Vector2 megamanViewPos=m_camera.translateCoordinates(megamanModelPos,m_windowHeight,m_windowWidth);
+            //Model height of viewPort
+            float modelViewPortY = (float)m_windowHeight / 64f;
+
+            //Calculate model displacement for y
+            float modelDisplacementY=megamanModelPos.Y-(modelViewPortY/2.0f);
+
+            //Calculate view DisplacementY for Y
+            int viewDisplacementY = (int)(modelDisplacementY * 64f);
+
+            //Translate to view coordinates for megaman
+            Vector2 megamanViewPos = megamanModelPos * 64f;
 
             //Create destination rectangle for megaman
-            Rectangle destRectMegaman = new Rectangle((int)megamanViewPos.X, (int)megamanViewPos.Y, 64, 64);
+            Rectangle destRectMegaman = new Rectangle((int)megamanViewPos.X, (int)megamanViewPos.Y-viewDisplacementY, 64, 64);
 
             
             m_spriteBatch.Begin();
@@ -73,7 +79,9 @@ namespace MegaJump.View
                         Rectangle sourceRectangle = new Rectangle((int)m_tiles[x, y] * m_textureTileSize, 0, m_viewscale, m_viewscale);
 
                         //Destination rectangle
-                        Rectangle destRect = new Rectangle(x * m_viewscale, y * m_viewscale, m_viewscale, m_viewscale);
+                        //y ska ändras här för att passa spelarens position! Dvs istället för 100 ska vi ha displacement
+                        //Med 100 har allting "flyttats ned" 100 pixlar
+                        Rectangle destRect = new Rectangle((x * m_viewscale), (y * m_viewscale)-viewDisplacementY, m_viewscale, m_viewscale);
 
                         m_spriteBatch.Draw(m_texture, destRect, sourceRectangle, Color.White);
                     }

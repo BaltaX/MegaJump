@@ -16,7 +16,7 @@ namespace MegaJump.Model
         //Pad m_pad = new Pad();
         //Player m_player = new Player();
 
-        Player m_player = new Player(new Vector2(0.5f, 0.8f));
+        Player m_player = new Player(new Vector2(5f, 37f));
         Level m_level = new Level();
         const float DISPLACEMENT_OF_LINE = 0.02f;
 
@@ -30,7 +30,7 @@ namespace MegaJump.Model
             m_player.Update(a_elapsedTimeSeconds);
 
             //Check bottom level
-            if (m_player.getPosition().Y > 0.8) m_player.SetPosition(m_player.getPosition().X, 0.8f);
+            if (m_player.getPosition().Y > 37f) m_player.SetPosition(m_player.getPosition().X, 37f);
 
             //Variables used for game logic for bouncing ball
             Vector2 m_position = m_player.getPosition();

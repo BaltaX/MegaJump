@@ -18,7 +18,7 @@ namespace MegaJump.Model
         {
             //Initialize members
             m_position = a_position;
-            m_speed = new Vector2(0.0f, -0.9f);
+            m_speed = new Vector2(0.0f, -20.0f);
             
         }
 
@@ -26,7 +26,7 @@ namespace MegaJump.Model
         internal void Update(float a_elapsedTimeSeconds)
         {
             //Define the gravity
-            Vector2 gravity = new Vector2(0.0f, 0.982f);
+            Vector2 gravity = new Vector2(0.0f, 12f);
 
             //Integrate position
             m_position = m_position + m_speed * a_elapsedTimeSeconds + gravity * a_elapsedTimeSeconds * a_elapsedTimeSeconds;
@@ -65,12 +65,12 @@ namespace MegaJump.Model
 
         internal void MoveLeft()
         {
-            m_position.X = m_position.X - 0.01f;
+            m_position.X = m_position.X - 0.1f;
         }
 
         internal void MoveRight()
         {
-            m_position.X = m_position.X + 0.01f;
+            m_position.X = m_position.X + 0.1f;
         }
     }
 }
