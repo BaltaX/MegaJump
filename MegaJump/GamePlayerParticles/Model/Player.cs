@@ -18,7 +18,7 @@ namespace MegaJump.Model
         {
             //Initialize members
             m_position = a_position;
-            m_speed = new Vector2(0.0f, -20.0f);
+            m_speed = new Vector2(0.0f, -10.0f);
             
         }
 
@@ -47,6 +47,11 @@ namespace MegaJump.Model
             return m_position;
         }
 
+        internal Vector2 getSpeed()
+        {
+            return m_speed;
+        }
+
        
         internal void reverseSpeedX()
         {
@@ -61,6 +66,11 @@ namespace MegaJump.Model
         internal void SetPosition(float p, float p_2)
         {
             m_position = new Vector2(p, p_2);
+        }
+
+        internal void SetSpeed(float p, float p_2)
+        {
+            m_speed = new Vector2(p, p_2);
         }
 
         internal void MoveLeft()

@@ -94,6 +94,10 @@ namespace MegaJump
                 m_mainModel.MovePlayerRight();
             }
 
+            
+
+
+
             m_mainModel.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
 
             base.Update(gameTime);

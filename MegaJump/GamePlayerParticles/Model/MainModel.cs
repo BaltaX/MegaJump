@@ -18,6 +18,7 @@ namespace MegaJump.Model
 
         Player m_player = new Player(new Vector2(5f, 37f));
         Level m_level = new Level();
+        
         const float DISPLACEMENT_OF_LINE = 0.02f;
 
         internal void Update(float a_elapsedTimeSeconds)
@@ -30,26 +31,50 @@ namespace MegaJump.Model
             m_player.Update(a_elapsedTimeSeconds);
 
             //Check bottom level
-            if (m_player.getPosition().Y > 37f) m_player.SetPosition(m_player.getPosition().X, 37f);
+            if (m_player.getPosition().Y > 37f)
+            {
+                m_player.SetPosition(m_player.getPosition().X, 37f);
+                
+            }
 
-            //Variables used for game logic for bouncing ball
-            Vector2 m_position = m_player.getPosition();
-            //float m_radius = m_player.getPlayerRadius();
+            //Check for collisions
 
-            //Game logic for bouncing ball
-            //if (m_position.X > 1 - (m_radius / 2) - DISPLACEMENT_OF_LINE || m_position.X < 0 + (m_radius / 2) + DISPLACEMENT_OF_LINE) m_player.reverseSpeedX();//Horizontal bounce
-            //if (m_position.Y > 1 - (m_radius / 2) - DISPLACEMENT_OF_LINE || m_position.Y < 0 + (m_radius / 2) + DISPLACEMENT_OF_LINE) m_player.reverseSpeedY();//Vertical bounce
+            //Get model coordinates for player upper left
+            Vector2 modelPlayerCoordinates = m_player.getPosition();
+            //Go through all tiles
+            MegaJump.Model.Level.Tile[,] m_tiles = m_level.getTiles();
+
+            for (int x = 0; x < m_level.getlevelWidth(); x++)
+            {
+                for (int y = 0; y < m_level.getlevelHeight(); y++)
+                { 
+                //Check if it is a coin
+                    if (m_tiles[x, y] == MegaJump.Model.Level.Tile.T_COIN)
+                    {
+                        //Get model coordinates for coin
+                        Vector2 modelCoinCoordinates = new Vector2((float)x, (float)y);
+
+                        //Calculate distance between coin and player
+                        float distancePlayerCoin = Vector2.Distance(modelCoinCoordinates, modelPlayerCoordinates);
+
+                        //Determine if distance is little enough to imply collision (64)
+                        if (distancePlayerCoin < 1f)
+                            m_player.SetSpeed(m_player.getSpeed().X, -10f);
+
+                    }
+
+                }
+            
+            }
         }
 
+
+        //POCO
         internal Vector2 getPlayerPosition()
         {
             return m_player.getPosition();
         }
 
-        //internal float getPlayerRadius()
-        //{
-        //    return m_player.getPlayerRadius();
-        //}
 
         internal float getLineDisplacement()
         {

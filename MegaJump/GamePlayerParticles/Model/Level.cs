@@ -36,10 +36,11 @@ namespace MegaJump.Model
                 {
                     
                     int tileAttValja;
-                    tileAttValja = (int)((float)random.NextDouble() * 4.0f);
-                    
+                    tileAttValja = (int)((float)random.NextDouble() * 40.0f);
 
-                    m_tiles[x, y] = (Tile)tileAttValja;
+                    if (tileAttValja == 0)
+                        m_tiles[x, y] = Tile.T_COIN;
+                    else m_tiles[x, y] = Tile.T_EMPTY;
                 }
             
             }
