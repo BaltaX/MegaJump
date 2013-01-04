@@ -110,6 +110,7 @@
     <Compile Include="MasterController.cs" />
     <Compile Include="Model\Level.cs" />
     <Compile Include="Model\MainModel.cs" />
+    <Compile Include="Model\ModelObserver.cs" />
     <Compile Include="Model\Player.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />

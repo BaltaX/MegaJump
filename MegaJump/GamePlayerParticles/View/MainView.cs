@@ -4,16 +4,22 @@ using System.Linq;
 using System.Text;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework;
+using MegaJump.Model;
+using Microsoft.Xna.Framework.Audio;
+using Microsoft.Xna.Framework.Media;
 
 
 namespace MegaJump.View
 {
-    class MainView
+    class MainView : IModelObserver
     {
         //All assets announced here
         Texture2D m_ball;
         Texture2D m_frame;
         Texture2D m_megaMan;
+        Texture2D m_background; 
+        SoundEffect m_soundEffect;
+        
         //...more assets here
 
         //Members declared
@@ -67,8 +73,17 @@ namespace MegaJump.View
             //Create destination rectangle for megaman
             Rectangle destRectMegaman = new Rectangle((int)megamanViewPos.X, (int)megamanViewPos.Y-viewDisplacementY, 64, 64);
 
+            //Create destination rectangle for background
+            Rectangle sourceBackgroundRectangle = new Rectangle(0, 100, 64, 64);
+
+            Rectangle destBackgroundRectangle = new Rectangle(0, -(int)((float)viewDisplacementY/10f), 640, 2560);
             
             m_spriteBatch.Begin();
+
+            //Draw background
+            m_spriteBatch.Draw(m_background, destBackgroundRectangle,Color.White);
+
+
 
                 //Draw level
                 for (int x = 0; x < a_mainModel.getlevelWidth(); x++)
@@ -104,6 +119,14 @@ namespace MegaJump.View
             m_frame = a_content.Load<Texture2D>("Line");
             m_texture = a_content.Load<Texture2D>("Sprites");
             m_megaMan = a_content.Load<Texture2D>("Megaman");
+            m_background = a_content.Load<Texture2D>("Background");
+
+            m_soundEffect = a_content.Load<SoundEffect>("glass-clink");
+        }
+
+        public void CollisionPlayerCoin()
+        {
+            m_soundEffect.Play();
         }
     }
 }

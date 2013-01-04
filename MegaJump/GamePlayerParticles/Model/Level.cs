@@ -18,7 +18,7 @@ namespace MegaJump.Model
 
         //Width and height
         internal const int levelWidth = 10;
-        internal const int levelHeight = 40;
+        internal const int levelHeight = 400;
 
         //The array of tiles
         internal Tile[,] m_tiles = new Tile[levelWidth, levelHeight];
@@ -36,10 +36,11 @@ namespace MegaJump.Model
                 {
                     
                     int tileAttValja;
-                    tileAttValja = (int)((float)random.NextDouble() * 40.0f);
+                    tileAttValja = (int)((float)random.NextDouble() * 20.0f);
 
                     if (tileAttValja == 0)
                         m_tiles[x, y] = Tile.T_COIN;
+                    else if (tileAttValja == 1) m_tiles[x, y] = Tile.T_STAR;
                     else m_tiles[x, y] = Tile.T_EMPTY;
                 }
             

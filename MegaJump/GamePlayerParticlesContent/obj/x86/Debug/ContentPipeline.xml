@@ -55,6 +55,24 @@
       <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\Megaman.xnb</Output>
       <Time>2013-01-02T21:37:44.433+01:00</Time>
     </Item>
+    <Item>
+      <Source>glass-clink.wav</Source>
+      <Name>glass-clink</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\glass-clink.xnb</Output>
+      <Time>2013-01-04T00:38:13.916+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Background.png</Source>
+      <Name>Background</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\Background.xnb</Output>
+      <Time>2013-01-04T00:25:19.735+01:00</Time>
+    </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>
       <TargetPlatform>Windows</TargetPlatform>

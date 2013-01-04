@@ -10,3 +10,5 @@ C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod frå
 C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\obj\x86\Debug\GamePlayerParticles.pdb
 C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\Sprites.xnb
 C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\Megaman.xnb
+C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\glass-clink.xnb
+C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\Background.xnb

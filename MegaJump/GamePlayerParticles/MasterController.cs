@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.GamerServices;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using MegaJump.Model;
 
 namespace MegaJump
 {
@@ -98,7 +99,7 @@ namespace MegaJump
 
 
 
-            m_mainModel.Update((float)gameTime.ElapsedGameTime.TotalSeconds);
+            m_mainModel.Update((float)gameTime.ElapsedGameTime.TotalSeconds,m_mainView);
 
             base.Update(gameTime);
         }

@@ -16,12 +16,15 @@ namespace MegaJump.Model
         //Pad m_pad = new Pad();
         //Player m_player = new Player();
 
-        Player m_player = new Player(new Vector2(5f, 37f));
+        Player m_player = new Player(new Vector2(5f, 320f));
         Level m_level = new Level();
+       
+        
+        
         
         const float DISPLACEMENT_OF_LINE = 0.02f;
 
-        internal void Update(float a_elapsedTimeSeconds)
+        internal void Update(float a_elapsedTimeSeconds, IModelObserver a_observer)
         {
             //Here is the place to distribute the update command to update methods in the 
             //instances of secondary model classes created above
@@ -31,9 +34,9 @@ namespace MegaJump.Model
             m_player.Update(a_elapsedTimeSeconds);
 
             //Check bottom level
-            if (m_player.getPosition().Y > 37f)
+            if (m_player.getPosition().Y > 320f)
             {
-                m_player.SetPosition(m_player.getPosition().X, 37f);
+                m_player.SetPosition(m_player.getPosition().X, 320f);
                 
             }
 
@@ -59,7 +62,11 @@ namespace MegaJump.Model
 
                         //Determine if distance is little enough to imply collision (64)
                         if (distancePlayerCoin < 1f)
+                        {
+                            m_tiles[x, y] = MegaJump.Model.Level.Tile.T_EMPTY;
                             m_player.SetSpeed(m_player.getSpeed().X, -10f);
+                            a_observer.CollisionPlayerCoin();
+                        }
 
                     }
 
