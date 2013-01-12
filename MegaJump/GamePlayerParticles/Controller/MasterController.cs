@@ -68,7 +68,7 @@ namespace MegaJump
             m_mainView.LoadContent(Content);
 
             //Load IMGui
-            m_IMGui = new IMGui(Content,GraphicsDevice);
+            m_IMGui = new IMGui(Content,GraphicsDevice,m_mainModel);
 
         }
 
@@ -91,12 +91,14 @@ namespace MegaJump
             if (m_showMenu)
             {
                 int buttonSeparation = 35;
-                int menuX = 200;
-                int menuY = 75;
+                int menuX = 300;
+                int menuY = 400;
 
                 this.IsMouseVisible = true;
 
-                if (m_IMGui.doButton(Mouse.GetState(), "Play", menuX, 75))
+                m_IMGui.DrawScores();
+
+                if (m_IMGui.doButton(Mouse.GetState(), "Play", menuX, menuY))
                 {
                     m_showMenu = false;
                     m_gameOverTime=0f;
@@ -117,8 +119,8 @@ namespace MegaJump
                 }
 
 
-                m_IMGui.setOldState(Mouse.GetState()); 
-            
+                m_IMGui.setOldState(Mouse.GetState());
+                
             
             }
 
@@ -181,17 +183,23 @@ namespace MegaJump
         protected override void Draw(GameTime gameTime)
         {
             if (m_showMenu) return;
-            GraphicsDevice.Clear(Color.White);
-            //What should be drawn if game over
-            if (m_mainModel.getGameOver())
-            {
-                m_mainView.Draw(m_mainModel, gameTime.ElapsedGameTime.TotalSeconds);
-            }
 
-            //What should be drawn if not game over
+
             else
             {
-                m_mainView.Draw(m_mainModel, gameTime.ElapsedGameTime.TotalSeconds);
+                GraphicsDevice.Clear(Color.White);
+
+                //What should be drawn if game over
+                if (m_mainModel.getGameOver())
+                {
+                    m_mainView.Draw(m_mainModel, gameTime.ElapsedGameTime.TotalSeconds);
+                }
+
+                //What should be drawn if not game over
+                else
+                {
+                    m_mainView.Draw(m_mainModel, gameTime.ElapsedGameTime.TotalSeconds);
+                }
             }
             base.Draw(gameTime);
         }

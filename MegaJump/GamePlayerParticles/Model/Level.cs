@@ -7,6 +7,7 @@ namespace MegaJump.Model
 {
     class Level
     {
+        string m_url;
         Random random = new Random();
         public enum Tile
         {
@@ -22,12 +23,13 @@ namespace MegaJump.Model
 
         //Width and height
         internal const int levelWidth = 10;
-        internal const int levelHeight = 500;
+        internal const int levelHeight = 400;
 
         //The array of tiles
         internal Tile[,] m_tiles;
         internal Level(string a_path)
         {
+            m_url = a_path;
             GenerateLevel(a_path);
         }
 
@@ -111,6 +113,11 @@ namespace MegaJump.Model
         internal void Initialize(string a_stringPath)
         {
             GenerateLevel(a_stringPath);
+        }
+
+        internal string getPath()
+        {
+            return m_url;
         }
     }
 }

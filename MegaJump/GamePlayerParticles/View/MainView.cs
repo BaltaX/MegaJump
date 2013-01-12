@@ -40,7 +40,8 @@ namespace MegaJump.View
 
         private int m_viewscale=64;
         private int m_textureTileSize = 64;
-
+        bool m_showMenu = true;
+        bool m_showAnnouncement = false;
 
         public MainView(GraphicsDevice a_graphicsDevice)
         {
@@ -54,88 +55,104 @@ namespace MegaJump.View
 
         internal void Draw(Model.MainModel a_mainModel, double a_elapsedTimeTotalSeconds)
         {
-            //Variables used for drawing game
-            //Vector2 modelPosition = a_mainModel.getPlayerPosition();
             
-            m_tiles = a_mainModel.getTiles();
-            
-            //Destination rectangle for Megaman
+                //Variables used for drawing game
+                //Vector2 modelPosition = a_mainModel.getPlayerPosition();
 
-            //Get model coordinates for Megaman
-            Vector2 megamanModelPos = a_mainModel.getPlayerPosition();
+                m_tiles = a_mainModel.getTiles();
 
-            //Model height of viewPort
-            float modelViewPortY = (float)m_windowHeight / 64f;
+                //Destination rectangle for Megaman
 
-            //Calculate model displacement for y
-            float modelDisplacementY=megamanModelPos.Y-(modelViewPortY/2.0f);
+                //Get model coordinates for Megaman
+                Vector2 megamanModelPos = a_mainModel.getPlayerPosition();
 
-            //Calculate view DisplacementY for Y
-            int viewDisplacementY = (int)(modelDisplacementY * 64f);
+                //Model height of viewPort
+                float modelViewPortY = (float)m_windowHeight / 64f;
 
-            //Translate to view coordinates for megaman
-            Vector2 megamanViewPos = megamanModelPos * 64f;
+                //Calculate model displacement for y
+                float modelDisplacementY = megamanModelPos.Y - (modelViewPortY / 2.0f);
 
-            //Create destination rectangle for megaman
-            Rectangle destRectMegaman = new Rectangle((int)megamanViewPos.X, (int)megamanViewPos.Y-viewDisplacementY, 64, 64);
+                //Calculate view DisplacementY for Y
+                int viewDisplacementY = (int)(modelDisplacementY * 64f);
 
-            //Create destination rectangle for background
-            Rectangle sourceBackgroundRectangle = new Rectangle(0, 100, 64, 64);
+                //Translate to view coordinates for megaman
+                Vector2 megamanViewPos = megamanModelPos * 64f;
 
-            Rectangle destBackgroundRectangle = new Rectangle(0, -(int)((float)viewDisplacementY/20f), 640, 2560);
+                //Create destination rectangle for megaman
+                Rectangle destRectMegaman = new Rectangle((int)megamanViewPos.X, (int)megamanViewPos.Y - viewDisplacementY, 64, 64);
 
-            //Create destination rectangle for scoreboard
-            Rectangle destScoreBoard = new Rectangle(0, 10, 640, 60);
-            
-            m_spriteBatch.Begin();
+                //Create destination rectangle for background
+                Rectangle sourceBackgroundRectangle = new Rectangle(0, 100, 64, 64);
 
-            //Draw background
-            m_spriteBatch.Draw(m_background, destBackgroundRectangle,Color.White);
+                Rectangle destBackgroundRectangle = new Rectangle(0, -(int)((float)viewDisplacementY / 27f), 640, 1920);
+
+                //Create destination rectangle for scoreboard
+                Rectangle destScoreBoard = new Rectangle(0, 10, 640, 60);
+
+                m_spriteBatch.Begin();
+
+                //Draw background
+                m_spriteBatch.Draw(m_background, destBackgroundRectangle, Color.White);
 
 
 
-            //Draw level
-            for (int x = 0; x < a_mainModel.getlevelWidth(); x++)
-            { 
-                for(int y=0; y<a_mainModel.getlevelHeight();y++)
+                //Draw level
+                for (int x = 0; x < a_mainModel.getlevelWidth(); x++)
                 {
-                    //Source rectangle
-                    Rectangle sourceRectangle = new Rectangle((int)m_tiles[x, y] * m_textureTileSize, 0, m_viewscale, m_viewscale);
+                    for (int y = 0; y < a_mainModel.getlevelHeight(); y++)
+                    {
+                        //Source rectangle
+                        Rectangle sourceRectangle = new Rectangle((int)m_tiles[x, y] * m_textureTileSize, 0, m_viewscale, m_viewscale);
 
-                    //Destination rectangle
-                    //y ska ändras här för att passa spelarens position! Dvs istället för 100 ska vi ha displacement
-                    //Med 100 har allting "flyttats ned" 100 pixlar
-                    Rectangle destRect = new Rectangle((x * m_viewscale), (y * m_viewscale)-viewDisplacementY, m_viewscale, m_viewscale);
+                        //Destination rectangle
+                        //y ska ändras här för att passa spelarens position! Dvs istället för 100 ska vi ha displacement
+                        //Med 100 har allting "flyttats ned" 100 pixlar
+                        Rectangle destRect = new Rectangle((x * m_viewscale), (y * m_viewscale) - viewDisplacementY, m_viewscale, m_viewscale);
 
-                    m_spriteBatch.Draw(m_texture, destRect, sourceRectangle, Color.White);
+                        m_spriteBatch.Draw(m_texture, destRect, sourceRectangle, Color.White);
 
 
+                    }
                 }
-            }
 
-            //Draw Megaman if not dead
-            if(!gameOver)
-            m_spriteBatch.Draw(m_megaMan, destRectMegaman, Color.White);
+                //Draw Megaman if not dead
+                if (!gameOver)
+                    m_spriteBatch.Draw(m_megaMan, destRectMegaman, Color.White);
 
-            else
-            m_spriteBatch.Draw(m_megaManDead, destRectMegaman, Color.White);
+                else
+                    m_spriteBatch.Draw(m_megaManDead, destRectMegaman, Color.White);
 
-            //Draw scoreboard
-            m_spriteBatch.Draw(m_scoreBoard, destScoreBoard, Color.White);
+                //Draw scoreboard
+                m_spriteBatch.Draw(m_scoreBoard, destScoreBoard, Color.White);
 
-            //Draw height score
-            m_spriteBatch.DrawString(font, "Height: " + ((int)((500-a_mainModel.getPlayerPosition().Y))).ToString(), new Vector2(20, 30), Color.White);
+                //Draw height score
+                m_spriteBatch.DrawString(font, "Height: " + ((int)((400 - a_mainModel.getPlayerPosition().Y+a_mainModel.getAccumulatedHeight()))).ToString(), new Vector2(20, 30), Color.White);//fyfyfytfyfyfytfyfytfyfyfyfytfyfyfyfyfyfyfyfy
 
-            if (gameOver)
-            {
-                m_spriteBatch.DrawString(font, "GAME OVER!", new Vector2(300, 450), Color.White);
-            }
+                //Draw elapsed time
+                m_spriteBatch.DrawString(font, "Time: " + String.Format("{0:0.00}", a_mainModel.getElapsedTime()), new Vector2(160, 30), Color.White);
+
+                //Draw number of coins
+                m_spriteBatch.DrawString(font, "Coins: " + a_mainModel.getNumberOfCoins().ToString(), new Vector2(300, 30), Color.White);
+
+                //Draw score
+                m_spriteBatch.DrawString(font, "Score: " + a_mainModel.getScore().ToString(), new Vector2(440, 30), Color.White);
+
+                if (m_showAnnouncement)
+                {
+
+                    m_spriteBatch.DrawString(font, "GET READY FOR NEW LEVEL", new Vector2(300, 500), Color.White);
+                }
+
+               
 
 
-            m_spriteBatch.End();
-
-
+                m_spriteBatch.End();
+            
+           
+            
         }
+
+        
 
         internal void LoadContent(Microsoft.Xna.Framework.Content.ContentManager a_content)
         {
@@ -180,6 +197,13 @@ namespace MegaJump.View
         internal void StartGame()
         {
             gameOver = false;
+           
+        }
+
+
+        public void DrawAnnouncement(bool p)
+        {
+            m_showAnnouncement = p;
         }
     }
 }

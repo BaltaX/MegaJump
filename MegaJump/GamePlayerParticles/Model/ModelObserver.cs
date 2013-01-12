@@ -12,5 +12,7 @@ namespace MegaJump.Model
         void GameEnd();
 
         void CollisionBomb();
+
+        void DrawAnnouncement(bool p);
     }
 }

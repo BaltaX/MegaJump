@@ -93,14 +93,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GamePlayerParticles.exe" size="22528">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GamePlayerParticles.exe" size="25600">
       <assemblyIdentity name="GamePlayerParticles" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>j8Fm9jbi93jwc94lJOk5DbdT0Nw=</dsig:DigestValue>
+        <dsig:DigestValue>cnJvI9BUtv+rWuVVYc4G8d/eV+w=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -158,13 +158,13 @@
       <dsig:DigestValue>R5oYjOx08s8NmFwKfRYwzFP1F3c=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Englalevel.txt" size="9999">
+  <file name="Content\Englalevel.txt" size="7999">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>sj2A+P6n5LyfbEVZX1j8DgD1/9M=</dsig:DigestValue>
+      <dsig:DigestValue>ouQXO/xHK5Abk4gcqaOubNf1fEo=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\glass-clink.xnb" size="364649">
@@ -176,22 +176,22 @@
       <dsig:DigestValue>mvrO39YC+X7qfDGJ9I0lVRRydWg=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Level1.txt" size="9999">
+  <file name="Content\Level1.txt" size="8000">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>FDGLIDUOmKjXX9L+l9Tbl+nRHFc=</dsig:DigestValue>
+      <dsig:DigestValue>CUSI6E247RD1j/Z5S4iWeym4iTo=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Levell1.txt" size="9999">
+  <file name="Content\Levell1.txt" size="7999">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>WwHsazKgLmpbz5q+L5VmENz8P28=</dsig:DigestValue>
+      <dsig:DigestValue>f0Z1sTLGKaSrHXsW3jfaFXwPzSg=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Line.xnb" size="640187">
