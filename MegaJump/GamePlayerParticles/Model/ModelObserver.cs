@@ -8,5 +8,9 @@ namespace MegaJump.Model
     interface IModelObserver
     {
         void CollisionPlayerCoin();
+
+        void GameEnd();
+
+        void CollisionBomb();
     }
 }

@@ -17,8 +17,13 @@ namespace MegaJump.View
         Texture2D m_ball;
         Texture2D m_frame;
         Texture2D m_megaMan;
-        Texture2D m_background; 
+        Texture2D m_megaManDead;
+        Texture2D m_background;
+        Texture2D m_scoreBoard; 
         SoundEffect m_soundEffect;
+        SoundEffect m_end;
+        SoundEffect m_bomb;
+        Song m_backGroundSong;
         
         //...more assets here
 
@@ -30,7 +35,8 @@ namespace MegaJump.View
         private Texture2D m_texture;
         private MegaJump.Model.Level.Tile[,] m_tiles;
         private ParticleSystem m_particleSystem = new ParticleSystem(new Vector2(0.5f, 0.5f), 5);//Reference point for particle system
-        
+        SpriteFont font;
+        bool gameOver = false;
 
         private int m_viewscale=64;
         private int m_textureTileSize = 64;
@@ -76,7 +82,10 @@ namespace MegaJump.View
             //Create destination rectangle for background
             Rectangle sourceBackgroundRectangle = new Rectangle(0, 100, 64, 64);
 
-            Rectangle destBackgroundRectangle = new Rectangle(0, -(int)((float)viewDisplacementY/10f), 640, 2560);
+            Rectangle destBackgroundRectangle = new Rectangle(0, -(int)((float)viewDisplacementY/20f), 640, 2560);
+
+            //Create destination rectangle for scoreboard
+            Rectangle destScoreBoard = new Rectangle(0, 10, 640, 60);
             
             m_spriteBatch.Begin();
 
@@ -85,25 +94,43 @@ namespace MegaJump.View
 
 
 
-                //Draw level
-                for (int x = 0; x < a_mainModel.getlevelWidth(); x++)
-                { 
-                    for(int y=0; y<a_mainModel.getlevelHeight();y++)
-                    {
-                        //Source rectangle
-                        Rectangle sourceRectangle = new Rectangle((int)m_tiles[x, y] * m_textureTileSize, 0, m_viewscale, m_viewscale);
+            //Draw level
+            for (int x = 0; x < a_mainModel.getlevelWidth(); x++)
+            { 
+                for(int y=0; y<a_mainModel.getlevelHeight();y++)
+                {
+                    //Source rectangle
+                    Rectangle sourceRectangle = new Rectangle((int)m_tiles[x, y] * m_textureTileSize, 0, m_viewscale, m_viewscale);
 
-                        //Destination rectangle
-                        //y ska ändras här för att passa spelarens position! Dvs istället för 100 ska vi ha displacement
-                        //Med 100 har allting "flyttats ned" 100 pixlar
-                        Rectangle destRect = new Rectangle((x * m_viewscale), (y * m_viewscale)-viewDisplacementY, m_viewscale, m_viewscale);
+                    //Destination rectangle
+                    //y ska ändras här för att passa spelarens position! Dvs istället för 100 ska vi ha displacement
+                    //Med 100 har allting "flyttats ned" 100 pixlar
+                    Rectangle destRect = new Rectangle((x * m_viewscale), (y * m_viewscale)-viewDisplacementY, m_viewscale, m_viewscale);
 
-                        m_spriteBatch.Draw(m_texture, destRect, sourceRectangle, Color.White);
-                    }
+                    m_spriteBatch.Draw(m_texture, destRect, sourceRectangle, Color.White);
+
+
                 }
+            }
 
-                //Draw Megaman
-                m_spriteBatch.Draw(m_megaMan, destRectMegaman, Color.White);
+            //Draw Megaman if not dead
+            if(!gameOver)
+            m_spriteBatch.Draw(m_megaMan, destRectMegaman, Color.White);
+
+            else
+            m_spriteBatch.Draw(m_megaManDead, destRectMegaman, Color.White);
+
+            //Draw scoreboard
+            m_spriteBatch.Draw(m_scoreBoard, destScoreBoard, Color.White);
+
+            //Draw height score
+            m_spriteBatch.DrawString(font, "Height: " + ((int)((500-a_mainModel.getPlayerPosition().Y))).ToString(), new Vector2(20, 30), Color.White);
+
+            if (gameOver)
+            {
+                m_spriteBatch.DrawString(font, "GAME OVER!", new Vector2(300, 450), Color.White);
+            }
+
 
             m_spriteBatch.End();
 
@@ -119,14 +146,40 @@ namespace MegaJump.View
             m_frame = a_content.Load<Texture2D>("Line");
             m_texture = a_content.Load<Texture2D>("Sprites");
             m_megaMan = a_content.Load<Texture2D>("Megaman");
+            m_megaManDead = a_content.Load<Texture2D>("Megaman_dead");
             m_background = a_content.Load<Texture2D>("Background");
-
+            m_scoreBoard = a_content.Load<Texture2D>("ScoreBoard");
+            font = a_content.Load<SpriteFont>("myFont");
             m_soundEffect = a_content.Load<SoundEffect>("glass-clink");
+            m_end = a_content.Load<SoundEffect>("end");
+            m_bomb = a_content.Load<SoundEffect>("Bomb");
+            m_backGroundSong = a_content.Load<Song>("Soundtrack2");
+
+            //Denna ska inte vara här!
+            MediaPlayer.Play(m_backGroundSong);
         }
 
         public void CollisionPlayerCoin()
         {
-            m_soundEffect.Play();
+            Random rand=new Random();
+            m_soundEffect.Play(0.4f,(float)(rand.NextDouble())*1.2f-1f,0f);
+        }
+
+        public void CollisionBomb()
+        {
+            m_bomb.Play();
+        }
+
+
+        public void GameEnd()
+        {
+            m_end.Play();
+            gameOver = true;
+        }
+
+        internal void StartGame()
+        {
+            gameOver = false;
         }
     }
 }

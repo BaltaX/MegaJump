@@ -1,1 +1,2 @@
+C:\Users\nek-ksu\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticlesContent\obj\x86\Debug\ResolveAssemblyReference.cache
 C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticlesContent\obj\x86\Debug\ResolveAssemblyReference.cache

@@ -29,22 +29,13 @@
       <Time>2013-01-01T23:51:13.572+01:00</Time>
     </Item>
     <Item>
-      <Source>myFont.spritefont</Source>
-      <Name>myFont</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\myFont.xnb</Output>
-      <Time>2013-01-01T23:51:13.569+01:00</Time>
-    </Item>
-    <Item>
       <Source>Sprites.png</Source>
       <Name>Sprites</Name>
       <Importer>TextureImporter</Importer>
       <Processor>TextureProcessor</Processor>
       <Options>None</Options>
       <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\Sprites.xnb</Output>
-      <Time>2013-01-02T16:59:46.1182+01:00</Time>
+      <Time>2013-01-10T18:36:43.022+01:00</Time>
     </Item>
     <Item>
       <Source>Megaman.png</Source>
@@ -56,15 +47,6 @@
       <Time>2013-01-02T21:37:44.433+01:00</Time>
     </Item>
     <Item>
-      <Source>glass-clink.wav</Source>
-      <Name>glass-clink</Name>
-      <Importer>WavImporter</Importer>
-      <Processor>SoundEffectProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\glass-clink.xnb</Output>
-      <Time>2013-01-04T00:38:13.916+01:00</Time>
-    </Item>
-    <Item>
       <Source>Background.png</Source>
       <Name>Background</Name>
       <Importer>TextureImporter</Importer>
@@ -72,6 +54,88 @@
       <Options>None</Options>
       <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\Background.xnb</Output>
       <Time>2013-01-04T00:25:19.735+01:00</Time>
+    </Item>
+    <Item>
+      <Source>button.png</Source>
+      <Name>button</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\button.xnb</Output>
+      <Time>2013-01-09T13:30:59+01:00</Time>
+    </Item>
+    <Item>
+      <Source>scoreboard.png</Source>
+      <Name>scoreboard</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\scoreboard.xnb</Output>
+      <Time>2013-01-09T16:01:16+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Megaman_dead.png</Source>
+      <Name>Megaman_dead</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\Megaman_dead.xnb</Output>
+      <Time>2013-01-09T16:25:57+01:00</Time>
+    </Item>
+    <Item>
+      <Source>myFont.spritefont</Source>
+      <Name>myFont</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\myFont.xnb</Output>
+      <Time>2013-01-01T23:51:13.569+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Courier New.spritefont</Source>
+      <Name>Courier New</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\Courier New.xnb</Output>
+      <Time>2013-01-09T13:48:27+01:00</Time>
+    </Item>
+    <Item>
+      <Source>glass-clink.wav</Source>
+      <Name>glass-clink</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\glass-clink.xnb</Output>
+      <Time>2013-01-09T21:13:41.024+01:00</Time>
+    </Item>
+    <Item>
+      <Source>end.wav</Source>
+      <Name>end</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\end.xnb</Output>
+      <Time>2013-01-04T22:04:35.931+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Bomb.wav</Source>
+      <Name>Bomb</Name>
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\Bomb.xnb</Output>
+      <Time>2013-01-09T22:03:31.352+01:00</Time>
+    </Item>
+    <Item>
+      <Source>Soundtrack2.mp3</Source>
+      <Name>Soundtrack2</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\Soundtrack2.xnb</Output>
+      <Extra>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\Soundtrack2.wma</Extra>
+      <Time>2013-01-07T16:37:59.146+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

@@ -1,3 +1,31 @@
 ﻿TO-DO-lista för MegaJump
 
-Måste ta reda på om det bara är för att rita upp världen/skapa världen som vi använder tiles, dvs så att plötsligt inte spelaren börjar röra sig i tiles också?
+Se till så att spelaren börjar på height=0 däe också bildn ska börja
+
+Implementera så att spelaren inte är i mitten längst ner (dvs i början)
+
+Spelaren får inte gå utanför (höger vänster)
+
+Konstruera banan!!!!
+
+Ta reda på vad spelaren har för maximal räckvidd
+
+Skärm för när man dör
+
+Räkna mynt
+
+Implementera stjärnor
+
+Implementera tyngder
+
+Partikeleffekt till stjärnor
+
+Klara, färdiga, gå efter man tryckt start
+
+Level 2 box, och level 3 box
+
+Bakgeundsmusik
+
+Ljudeffekter (variera): kollision, dödsfall
+
+Ändra spelarens utseende vid a)stjärna och b)död

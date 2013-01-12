@@ -11,14 +11,14 @@ namespace MegaJump.Model
         //Declare Members
         Vector2 m_position;// = new Vector2(0.1f, 0.1f);
         Vector2 m_speed;// = new Vector2(0.5f, 0.4f);
-        
+        Vector2 m_gravity = new Vector2(0.0f, 12f);
 
         //Constructor
         public Player(Vector2 a_position)
         {
             //Initialize members
             m_position = a_position;
-            m_speed = new Vector2(0.0f, -10.0f);
+            m_speed = new Vector2(0.0f, -11.0f);
             
         }
 
@@ -26,18 +26,13 @@ namespace MegaJump.Model
         internal void Update(float a_elapsedTimeSeconds)
         {
             //Define the gravity
-            Vector2 gravity = new Vector2(0.0f, 12f);
+            //Vector2 gravity = new Vector2(0.0f, 11f);
 
             //Integrate position
-            m_position = m_position + m_speed * a_elapsedTimeSeconds + gravity * a_elapsedTimeSeconds * a_elapsedTimeSeconds;
+            m_position = m_position + m_speed * a_elapsedTimeSeconds + m_gravity * a_elapsedTimeSeconds * a_elapsedTimeSeconds;
 
             //Integrate position
-            m_speed = m_speed + a_elapsedTimeSeconds * gravity;
-
-
-
-
-
+            m_speed = m_speed + a_elapsedTimeSeconds * m_gravity;
             m_position.X = m_position.X + (a_elapsedTimeSeconds * m_speed.X);
             m_position.Y = m_position.Y + (a_elapsedTimeSeconds * m_speed.Y);
         }
@@ -50,6 +45,11 @@ namespace MegaJump.Model
         internal Vector2 getSpeed()
         {
             return m_speed;
+        }
+
+        internal Vector2 getGravity()
+        {
+            return m_gravity;
         }
 
        
@@ -73,6 +73,11 @@ namespace MegaJump.Model
             m_speed = new Vector2(p, p_2);
         }
 
+        internal void SetGravity(float p, float p_2)
+        {
+            m_gravity=new Vector2(p,p_2);
+        }
+
         internal void MoveLeft()
         {
             m_position.X = m_position.X - 0.1f;
@@ -81,6 +86,13 @@ namespace MegaJump.Model
         internal void MoveRight()
         {
             m_position.X = m_position.X + 0.1f;
+        }
+
+        internal void Initialize(Vector2 a_position)
+        {
+            m_position = a_position;
+            m_speed = new Vector2(0.0f, -11.0f);
+            SetGravity(0, 11f);
         }
     }
 }

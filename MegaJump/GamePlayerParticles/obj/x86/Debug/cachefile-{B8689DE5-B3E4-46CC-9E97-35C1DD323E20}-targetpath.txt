@@ -1,8 +1,19 @@
 Content\Ball2.xnb
 Content\Line.xnb
 Content\particle.xnb
-Content\myFont.xnb
 Content\Sprites.xnb
 Content\Megaman.xnb
-Content\glass-clink.xnb
 Content\Background.xnb
+Content\button.xnb
+Content\scoreboard.xnb
+Content\Megaman_dead.xnb
+Content\myFont.xnb
+Content\Courier New.xnb
+Content\glass-clink.xnb
+Content\end.xnb
+Content\Bomb.xnb
+Content\Soundtrack2.xnb
+Content\Soundtrack2.wma
+Content\Level1.txt
+Content\Levell1.txt
+Content\Englalevel.txt
