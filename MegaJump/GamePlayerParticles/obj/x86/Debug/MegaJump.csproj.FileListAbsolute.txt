@@ -55,3 +55,6 @@ C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod frå
 C:\Users\nek-ksu\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\Bomb.xnb
 C:\Users\nek-ksu\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\Levell1.txt
 C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\Englalevel.txt
+C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\Bricksound.xnb
+C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\MenuBackground.xnb
+C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\MenuButtons.xnb

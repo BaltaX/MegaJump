@@ -93,14 +93,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GamePlayerParticles.exe" size="25600">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GamePlayerParticles.exe" size="26112">
       <assemblyIdentity name="GamePlayerParticles" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>cnJvI9BUtv+rWuVVYc4G8d/eV+w=</dsig:DigestValue>
+        <dsig:DigestValue>8WcVQHlK5CYKkjO20CUILaunUlk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -131,13 +131,22 @@
       <dsig:DigestValue>k/wdLeULWPpdGBdaS1Rhh74PRbk=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\button.xnb" size="48187">
+  <file name="Content\Bricksound.xnb" size="64617">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>8vBvEooF92q2IlA5ZEAFFflHHCA=</dsig:DigestValue>
+      <dsig:DigestValue>xo0MIDV/bz7vBjrrBlv5IVopZac=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\button.xnb" size="131011">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>stWT7MCuBGy9sT1eIoycoWZTVuI=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Courier New.xnb" size="21166">
@@ -176,13 +185,13 @@
       <dsig:DigestValue>mvrO39YC+X7qfDGJ9I0lVRRydWg=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="Content\Level1.txt" size="8000">
+  <file name="Content\Level1.txt" size="7999">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>CUSI6E247RD1j/Z5S4iWeym4iTo=</dsig:DigestValue>
+      <dsig:DigestValue>rGx0Cia/U1RdGlMnzqSsaNz3QLI=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Levell1.txt" size="7999">
@@ -219,6 +228,24 @@
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
       <dsig:DigestValue>gmYXahPFgdZYIpAUR+nOiB2mWUg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\MenuBackground.xnb" size="2457787">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>2BFkeiylE95C/5/+RtJ4w/bwbsA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Content\MenuButtons.xnb" size="59566">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>r4OAyz0Ux8DT1IdLvjIQEpXBLUE=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\myFont.xnb" size="20654">

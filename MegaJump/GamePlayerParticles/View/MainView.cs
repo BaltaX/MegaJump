@@ -24,6 +24,7 @@ namespace MegaJump.View
         SoundEffect m_end;
         SoundEffect m_bomb;
         Song m_backGroundSong;
+        SoundEffect m_brickSound;
         
         //...more assets here
 
@@ -126,7 +127,7 @@ namespace MegaJump.View
                 m_spriteBatch.Draw(m_scoreBoard, destScoreBoard, Color.White);
 
                 //Draw height score
-                m_spriteBatch.DrawString(font, "Height: " + ((int)((400 - a_mainModel.getPlayerPosition().Y+a_mainModel.getAccumulatedHeight()))).ToString(), new Vector2(20, 30), Color.White);//fyfyfytfyfyfytfyfytfyfyfyfytfyfyfyfyfyfyfyfy
+                m_spriteBatch.DrawString(font, "Height: " + ((int)((400 - a_mainModel.getPlayerPosition().Y+a_mainModel.getAccumulatedHeight()))).ToString(), new Vector2(20, 30), Color.White);
 
                 //Draw elapsed time
                 m_spriteBatch.DrawString(font, "Time: " + String.Format("{0:0.00}", a_mainModel.getElapsedTime()), new Vector2(160, 30), Color.White);
@@ -158,7 +159,6 @@ namespace MegaJump.View
         {
             //Load all texture2d assets here
             m_particleSystem.LoadContent(a_content);
-            //This is called from MasterController
             m_ball = a_content.Load<Texture2D>("Ball2");
             m_frame = a_content.Load<Texture2D>("Line");
             m_texture = a_content.Load<Texture2D>("Sprites");
@@ -171,6 +171,7 @@ namespace MegaJump.View
             m_end = a_content.Load<SoundEffect>("end");
             m_bomb = a_content.Load<SoundEffect>("Bomb");
             m_backGroundSong = a_content.Load<Song>("Soundtrack2");
+            m_brickSound = a_content.Load<SoundEffect>("Bricksound");
 
             //Denna ska inte vara här!
             MediaPlayer.Play(m_backGroundSong);
@@ -204,6 +205,13 @@ namespace MegaJump.View
         public void DrawAnnouncement(bool p)
         {
             m_showAnnouncement = p;
+        }
+
+
+        public void CollisionBrick()
+        {
+            Random rand = new Random();
+            m_brickSound.Play(0.3f, (float)(rand.NextDouble()) * 1.2f - 1f, 0f);
         }
     }
 }

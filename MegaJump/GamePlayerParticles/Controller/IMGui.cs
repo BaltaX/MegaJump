@@ -16,7 +16,9 @@ namespace MegaJump.Controller
         ContentManager m_content;
         MouseState m_oldMouseState;
         SpriteFont m_spriteFont;
+        SpriteFont m_menuFont;
         Texture2D m_texture;
+        Texture2D m_backGround;
         MegaJump.Model.MainModel m_mainModel;
         
 
@@ -27,7 +29,9 @@ namespace MegaJump.Controller
             m_content = a_content;
             m_spriteBatch = new SpriteBatch(a_graphicsDevice);
             m_spriteFont = a_content.Load<SpriteFont>("Courier New");
+            m_menuFont = a_content.Load<SpriteFont>("MenuButtons");
             m_texture = a_content.Load<Texture2D>("button");
+            m_backGround = a_content.Load<Texture2D>("MenuBackground");
             m_mainModel = a_mainmodel;
         }
 
@@ -49,18 +53,29 @@ namespace MegaJump.Controller
                 }
             }
 
+            //How many characters in text?
+            int numberOfCharacters = 0;
+            foreach (char c in a_text)
+            {
+                if (char.IsLetter(c))
+                {
+                    numberOfCharacters++;
+                }
+            }
+
+
             //Position text
-            Vector2 position = new Vector2(a_centerPosX - 150, a_centerPosY - 15);
+            Vector2 position = new Vector2(a_centerPosX+40-(numberOfCharacters*10), a_centerPosY );
 
             //Position button
-            Rectangle destinationRectangle = new Rectangle(a_centerPosX - 150, a_centerPosY - 15, 300, 30);
+            Rectangle destinationRectangle = new Rectangle(a_centerPosX - 150, a_centerPosY - 15, 400, 70);
 
             //Generate buttons
             m_spriteBatch.Begin();
 
             
             m_spriteBatch.Draw(m_texture, destinationRectangle, Color.LightGray);
-            m_spriteBatch.DrawString(m_spriteFont, a_text, position, Color.LightGray);
+            m_spriteBatch.DrawString(m_menuFont, a_text, position, Color.LightGray);
 
             m_spriteBatch.End();
             
@@ -74,15 +89,25 @@ namespace MegaJump.Controller
 
         internal void DrawScores()
         {
-            m_spriteBatch.Begin();
-            m_spriteBatch.DrawString(m_spriteFont, "Your height was: "+String.Format("{0:0.00}",m_mainModel.getMaxHeight()).ToString(), new Vector2(100f,100f), Color.LightGray);
-            m_spriteBatch.DrawString(m_spriteFont, "Record height is: " + String.Format("{0:0.00}",m_mainModel.getRecordHeight()).ToString(), new Vector2(100f, 140f), Color.LightGray);
-            m_spriteBatch.DrawString(m_spriteFont, "Time: " + String.Format("{0:0.00}",m_mainModel.getElapsedTime()).ToString()+" seconds", new Vector2(100f, 180f), Color.LightGray);
-            m_spriteBatch.DrawString(m_spriteFont, "Collected coins: " + m_mainModel.getNumberOfCoins(), new Vector2(100f, 220f), Color.LightGray);
-            m_spriteBatch.DrawString(m_spriteFont, "Record collected coins: " + m_mainModel.getRecordCoins(), new Vector2(100f, 260f), Color.LightGray);
-            m_spriteBatch.DrawString(m_spriteFont, "Score: " + m_mainModel.getScore(), new Vector2(100f, 300f), Color.LightGray);
-            m_spriteBatch.DrawString(m_spriteFont, "Record: " + m_mainModel.getRecordScore(), new Vector2(100f, 340f), Color.LightGray);
 
+
+            m_spriteBatch.Begin();
+            //Create destination rectangle for background
+            Rectangle backGroundDestRect = new Rectangle(0,0,640,960);
+
+            //Draw background
+            m_spriteBatch.Draw(m_backGround, backGroundDestRect, Color.White);
+
+            
+            
+            
+            m_spriteBatch.DrawString(m_spriteFont, m_mainModel.getScore().ToString(), new Vector2(272f, 113f), Color.LightGray);
+            m_spriteBatch.DrawString(m_spriteFont, m_mainModel.getRecordScore().ToString(), new Vector2(465f, 113f), Color.LightGray);
+            m_spriteBatch.DrawString(m_spriteFont, m_mainModel.getNumberOfCoins().ToString(), new Vector2(272f, 161f), Color.LightGray);
+            m_spriteBatch.DrawString(m_spriteFont, m_mainModel.getRecordCoins().ToString(), new Vector2(465f, 161f), Color.LightGray);
+            m_spriteBatch.DrawString(m_spriteFont, String.Format("{0:0.00}", m_mainModel.getMaxHeight()).ToString() + " m", new Vector2(272f, 209f), Color.LightGray);
+            m_spriteBatch.DrawString(m_spriteFont, String.Format("{0:0.00}", m_mainModel.getRecordHeight()).ToString() + " m", new Vector2(465f, 209f), Color.LightGray);
+            m_spriteBatch.DrawString(m_spriteFont, String.Format("{0:0.00}",m_mainModel.getElapsedTime()).ToString()+" s", new Vector2(272f, 257f), Color.LightGray);
 
             m_spriteBatch.End();
 

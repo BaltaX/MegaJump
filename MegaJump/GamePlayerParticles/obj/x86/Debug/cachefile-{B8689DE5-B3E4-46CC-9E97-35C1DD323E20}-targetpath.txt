@@ -14,6 +14,9 @@ Content\end.xnb
 Content\Bomb.xnb
 Content\Soundtrack2.xnb
 Content\Soundtrack2.wma
+Content\Bricksound.xnb
+Content\MenuBackground.xnb
+Content\MenuButtons.xnb
 Content\Level1.txt
 Content\Levell1.txt
 Content\Englalevel.txt

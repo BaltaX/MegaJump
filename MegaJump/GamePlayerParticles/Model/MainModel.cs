@@ -71,6 +71,7 @@ namespace MegaJump.Model
                 if (currentHeight < m_maxHeight - 17f)
                 {
                     m_gameOver = true;
+                    
                     if (m_maxHeight > m_recordHeight)
                     {
                         m_recordHeight = m_maxHeight;
@@ -199,7 +200,7 @@ namespace MegaJump.Model
                                     //m_player.SetPosition(m_player.getPosition().X, m_player.getPosition().Y-0.25f);
                                     //Let view know about collision
                                     //I want another method for this in IModelObserver (play another sound+particle system bound to player to visualize speed)
-                                    a_observer.CollisionPlayerCoin();
+                                    a_observer.CollisionBrick();
 
                                 }
 
@@ -399,6 +400,8 @@ namespace MegaJump.Model
         {
             m_gameOver = false;
             m_maxHeight = 0f;
+            m_currentLevel = 0;
+            m_accumulatedHeight = 0;
             m_player.Initialize(new Vector2(5f, 400f));
 
 

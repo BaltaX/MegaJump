@@ -90,9 +90,9 @@ namespace MegaJump
         {
             if (m_showMenu)
             {
-                int buttonSeparation = 35;
-                int menuX = 300;
-                int menuY = 400;
+                int buttonSeparation = 75;
+                int menuX = 280;
+                int menuY = 710;
 
                 this.IsMouseVisible = true;
 
