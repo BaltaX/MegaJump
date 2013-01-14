@@ -17,6 +17,12 @@ Content\Soundtrack2.wma
 Content\Bricksound.xnb
 Content\MenuBackground.xnb
 Content\MenuButtons.xnb
+Content\LevelCleared.xnb
+Content\GameOver.xnb
+Content\nextLevel.xnb
+Content\BG_Sky.xnb
+Content\BG_Space.xnb
 Content\Level1.txt
 Content\Levell1.txt
 Content\Englalevel.txt
+Content\Level2.txt

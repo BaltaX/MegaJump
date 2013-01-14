@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework;
 using MegaJump.Model;
 using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Media;
+using Microsoft.Xna.Framework.Content;
 
 
 namespace MegaJump.View
@@ -19,12 +20,17 @@ namespace MegaJump.View
         Texture2D m_megaMan;
         Texture2D m_megaManDead;
         Texture2D m_background;
-        Texture2D m_scoreBoard; 
+        Texture2D m_scoreBoard;
+        Texture2D m_nextLevelSign;
+        Texture2D m_gameOverSign;
+        Texture2D m_backGroundSky;
+        Texture2D m_backGroundSpace;
         SoundEffect m_soundEffect;
         SoundEffect m_end;
         SoundEffect m_bomb;
         Song m_backGroundSong;
         SoundEffect m_brickSound;
+        SoundEffect m_nextLevel;
         
         //...more assets here
 
@@ -35,7 +41,6 @@ namespace MegaJump.View
         private Camera m_camera;
         private Texture2D m_texture;
         private MegaJump.Model.Level.Tile[,] m_tiles;
-        private ParticleSystem m_particleSystem = new ParticleSystem(new Vector2(0.5f, 0.5f), 5);//Reference point for particle system
         SpriteFont font;
         bool gameOver = false;
 
@@ -43,6 +48,11 @@ namespace MegaJump.View
         private int m_textureTileSize = 64;
         bool m_showMenu = true;
         bool m_showAnnouncement = false;
+        int m_numberOfTimesNewLevel = 0;
+        ContentManager m_content;
+        int m_currentLevel = 0;
+        bool m_clearedAllLevels = false;
+        
 
         public MainView(GraphicsDevice a_graphicsDevice)
         {
@@ -51,6 +61,7 @@ namespace MegaJump.View
             m_windowWidth = a_graphicsDevice.Viewport.Width;
             m_windowHeight = a_graphicsDevice.Viewport.Height;
             m_camera = new Camera();
+           
             
         }
 
@@ -82,10 +93,11 @@ namespace MegaJump.View
                 //Create destination rectangle for megaman
                 Rectangle destRectMegaman = new Rectangle((int)megamanViewPos.X, (int)megamanViewPos.Y - viewDisplacementY, 64, 64);
 
-                //Create destination rectangle for background
+                //Create destination rectangle for background 
                 Rectangle sourceBackgroundRectangle = new Rectangle(0, 100, 64, 64);
 
                 Rectangle destBackgroundRectangle = new Rectangle(0, -(int)((float)viewDisplacementY / 27f), 640, 1920);
+                
 
                 //Create destination rectangle for scoreboard
                 Rectangle destScoreBoard = new Rectangle(0, 10, 640, 60);
@@ -93,7 +105,21 @@ namespace MegaJump.View
                 m_spriteBatch.Begin();
 
                 //Draw background
-                m_spriteBatch.Draw(m_background, destBackgroundRectangle, Color.White);
+                switch (m_currentLevel)
+                {
+                    case 0: m_spriteBatch.Draw(m_background, destBackgroundRectangle, Color.White);
+                        break;
+
+                    case 1: m_spriteBatch.Draw(m_backGroundSky, destBackgroundRectangle, Color.White);
+                        break;
+
+                    case 2: m_spriteBatch.Draw(m_backGroundSpace, destBackgroundRectangle, Color.White);
+                        break;
+
+
+                
+                }
+                
 
 
 
@@ -120,8 +146,18 @@ namespace MegaJump.View
                 if (!gameOver)
                     m_spriteBatch.Draw(m_megaMan, destRectMegaman, Color.White);
 
-                else
+
+
+                else if (gameOver&&!m_clearedAllLevels)
+                {
                     m_spriteBatch.Draw(m_megaManDead, destRectMegaman, Color.White);
+                    Rectangle gameOverDestRect = new Rectangle(90, 200, 477, 93);
+                    m_spriteBatch.Draw(m_gameOverSign, gameOverDestRect, Color.White);
+                }
+
+                
+
+                
 
                 //Draw scoreboard
                 m_spriteBatch.Draw(m_scoreBoard, destScoreBoard, Color.White);
@@ -140,25 +176,34 @@ namespace MegaJump.View
 
                 if (m_showAnnouncement)
                 {
-
-                    m_spriteBatch.DrawString(font, "GET READY FOR NEW LEVEL", new Vector2(300, 500), Color.White);
+                    Rectangle levelDestRect = new Rectangle(90, 280, 477, 93);
+                    m_spriteBatch.Draw(m_nextLevelSign, levelDestRect, Color.White);
+                    
                 }
 
-               
+                if(m_clearedAllLevels)
+                {
 
+                    Rectangle gameOverDestRect = new Rectangle(90, 200, 477, 93);
+                    m_spriteBatch.Draw(m_gameOverSign, gameOverDestRect, Color.White);
+                }
+
+                //if (m_drawParticleSystem)
+                //{
+                //    m_particleSystem = new ParticleSystem(new Vector2(1f, 12f), 1, m_content);
+                //    m_particleSystem.UpdateAndDraw(a_elapsedTimeTotalSeconds, m_spriteBatch, m_camera);
+                //    m_particleSystem.LoadContent(m_content);
+                //}
 
                 m_spriteBatch.End();
-            
-           
-            
-        }
+            }
 
         
 
         internal void LoadContent(Microsoft.Xna.Framework.Content.ContentManager a_content)
         {
             //Load all texture2d assets here
-            m_particleSystem.LoadContent(a_content);
+            m_content = a_content;
             m_ball = a_content.Load<Texture2D>("Ball2");
             m_frame = a_content.Load<Texture2D>("Line");
             m_texture = a_content.Load<Texture2D>("Sprites");
@@ -172,8 +217,14 @@ namespace MegaJump.View
             m_bomb = a_content.Load<SoundEffect>("Bomb");
             m_backGroundSong = a_content.Load<Song>("Soundtrack2");
             m_brickSound = a_content.Load<SoundEffect>("Bricksound");
+            m_nextLevel = a_content.Load<SoundEffect>("nextLevel");
+            m_nextLevelSign = a_content.Load<Texture2D>("LevelCleared");
+            m_gameOverSign = a_content.Load<Texture2D>("GameOver");
+            m_backGroundSky = a_content.Load<Texture2D>("BG_Sky");
+            m_backGroundSpace = a_content.Load<Texture2D>("BG_Space");
 
             //Denna ska inte vara här!
+            MediaPlayer.IsRepeating = true;
             MediaPlayer.Play(m_backGroundSong);
         }
 
@@ -186,6 +237,7 @@ namespace MegaJump.View
         public void CollisionBomb()
         {
             m_bomb.Play();
+            
         }
 
 
@@ -193,18 +245,24 @@ namespace MegaJump.View
         {
             m_end.Play();
             gameOver = true;
+            
         }
 
         internal void StartGame()
         {
             gameOver = false;
-           
+            m_currentLevel = 0;
+            m_clearedAllLevels = false;
         }
 
 
         public void DrawAnnouncement(bool p)
         {
             m_showAnnouncement = p;
+            m_numberOfTimesNewLevel++;
+            if (p&&m_numberOfTimesNewLevel == 1)
+                m_nextLevel.Play();
+            if (!p) m_numberOfTimesNewLevel = 0;
         }
 
 
@@ -212,6 +270,18 @@ namespace MegaJump.View
         {
             Random rand = new Random();
             m_brickSound.Play(0.3f, (float)(rand.NextDouble()) * 1.2f - 1f, 0f);
+        }
+
+
+        public void LevelAnnouncement(int p)
+        {
+            m_currentLevel++;
+        }
+
+        internal void AllLevelsCleared()
+        {
+            m_nextLevel.Play();
+            m_clearedAllLevels = true;
         }
     }
 }

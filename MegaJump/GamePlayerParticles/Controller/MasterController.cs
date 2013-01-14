@@ -25,6 +25,8 @@ namespace MegaJump
         float                   m_gameOverTime;
         bool                    m_showMenu = true;
         IMGui                   m_IMGui;
+        bool                    m_endOfGame=false;
+        
         
 
         public MasterController()
@@ -92,7 +94,7 @@ namespace MegaJump
             {
                 int buttonSeparation = 75;
                 int menuX = 280;
-                int menuY = 710;
+                int menuY = 685;
 
                 this.IsMouseVisible = true;
 
@@ -105,12 +107,13 @@ namespace MegaJump
                     m_mainModel.StartGame();
                     m_mainView.StartGame();
                     m_gameOver = false;
+                    
                     return;
                 }
 
                 if (m_IMGui.doButton(Mouse.GetState(), "Continue", menuX, menuY+=buttonSeparation))
                 {
-                    //Code if we click on Button Continue
+                    m_showMenu = false;
                 }
 
                 if (m_IMGui.doButton(Mouse.GetState(), "Quit", menuX, menuY += buttonSeparation))
@@ -118,11 +121,45 @@ namespace MegaJump
                     this.Exit();
                 }
 
+               
+
 
                 m_IMGui.setOldState(Mouse.GetState());
                 
             
             }
+
+            else if (m_mainModel.getClearedAllLevels() && m_endOfGame == false)
+            {
+                m_mainView.AllLevelsCleared();
+                m_endOfGame = true;
+                m_gameOverTime = (float)gameTime.ElapsedGameTime.Milliseconds;
+
+            }
+
+
+            else if (m_mainModel.getClearedAllLevels() && m_endOfGame == true)
+            {
+                //When game over, continue to update for one second
+                m_gameOverTime = m_gameOverTime + (float)gameTime.ElapsedGameTime.Milliseconds;
+                if (m_gameOverTime < 2000f)
+                {
+                    //Do nothing
+                }
+
+                //What to do after one second of game over 
+                else
+                {
+                    m_showMenu = true;
+
+                }
+
+            }
+
+
+
+
+
 
             //First iteration where "game over" is encountered
             else if (m_mainModel.getGameOver() && m_gameOver == false)
@@ -140,7 +177,7 @@ namespace MegaJump
             {
                 //When game over, continue to update for one second
                 m_gameOverTime = m_gameOverTime + (float)gameTime.ElapsedGameTime.Milliseconds;
-                if (m_gameOverTime < 1000f)
+                if (m_gameOverTime < 2000f)
                 {
                     m_mainModel.Update((float)gameTime.ElapsedGameTime.TotalSeconds, m_mainView);
                 }
@@ -149,6 +186,7 @@ namespace MegaJump
                 else
                 {
                     m_showMenu = true;
+
                 }
             }
 
@@ -168,6 +206,11 @@ namespace MegaJump
                 if (keyboardState.IsKeyDown(Keys.Right))
                 {
                     m_mainModel.MovePlayerRight();
+                }
+
+                if (keyboardState.IsKeyDown(Keys.P))
+                {
+                    m_showMenu = true;
                 }
 
                 m_mainModel.Update((float)gameTime.ElapsedGameTime.TotalSeconds, m_mainView);

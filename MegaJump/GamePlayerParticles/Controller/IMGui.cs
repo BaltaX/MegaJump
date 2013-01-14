@@ -21,6 +21,7 @@ namespace MegaJump.Controller
         Texture2D m_backGround;
         MegaJump.Model.MainModel m_mainModel;
         
+        
 
         
         public IMGui(Microsoft.Xna.Framework.Content.ContentManager a_content, GraphicsDevice a_graphicsDevice, MegaJump.Model.MainModel a_mainmodel)
@@ -98,8 +99,8 @@ namespace MegaJump.Controller
             //Draw background
             m_spriteBatch.Draw(m_backGround, backGroundDestRect, Color.White);
 
-            
-            
+
+           
             
             m_spriteBatch.DrawString(m_spriteFont, m_mainModel.getScore().ToString(), new Vector2(272f, 113f), Color.LightGray);
             m_spriteBatch.DrawString(m_spriteFont, m_mainModel.getRecordScore().ToString(), new Vector2(465f, 113f), Color.LightGray);

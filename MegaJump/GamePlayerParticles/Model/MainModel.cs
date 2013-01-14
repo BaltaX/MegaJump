@@ -33,7 +33,7 @@ namespace MegaJump.Model
         float m_currentHeight = 0;
         bool m_NewLevelAnnounced = false;
         float m_levelAnnouncementTime = 0;
-        
+        bool m_allLevelsCleared = false;
         const float DISPLACEMENT_OF_LINE = 0.02f;
 
         public MainModel()
@@ -42,8 +42,8 @@ namespace MegaJump.Model
         //Add the levels
 
             m_levels.Add(new Level("Content/Levell1.txt"));
-            m_levels.Add(new Level("Content/Englalevel.txt"));
-            m_levels.Add(new Level("Content/Level1.txt"));
+            m_levels.Add(new Level("Content/Level2.txt"));
+            m_levels.Add(new Level("Content/Level2.txt"));
         }
 
 
@@ -93,7 +93,17 @@ namespace MegaJump.Model
 
                 if (currentHeight > 400f + m_accumulatedHeight)
                 {
-                    NextLevel();
+                    if (m_currentLevel+1 < m_levels.Count())
+                    {
+                        NextLevel();
+                        a_observer.LevelAnnouncement(m_currentLevel + 1);
+                    }
+
+                    else
+                    {
+                        m_allLevelsCleared = true;
+                        return;
+                    }
                 }
 
                 m_player.Update(a_elapsedTimeSeconds);
@@ -206,7 +216,7 @@ namespace MegaJump.Model
 
                             }
 
-                            //Check if it is a hindrance
+                            //Check if it is a bomb
                             if (m_tiles[x, y] == MegaJump.Model.Level.Tile.T_BOMB)
                             {
                                 //Get model coordinates for star
@@ -232,9 +242,33 @@ namespace MegaJump.Model
 
                             }
 
-                            //Check if it is a hindrance
+                            //Check if it is a bomb
+                            if (m_tiles[x, y] == MegaJump.Model.Level.Tile.T_FOG)
+                            {
+                                //Get model coordinates for star
+                                Vector2 modelCoinCoordinates = new Vector2((float)x, (float)y);
+
+                                //Calculate distance between star and player
+                                float distancePlayerCoin = Vector2.Distance(modelCoinCoordinates, modelPlayerCoordinates);
+
+                                //If distance is small enough for a collision (1f)
+                                if (distancePlayerCoin < 1f)
+                                {
+                                    m_player.SetSpeed(m_player.getSpeed().X * (1 - a_elapsedTimeSeconds*0.75f), m_player.getSpeed().Y*(1 - a_elapsedTimeSeconds*0.75f));
+                                    //m_player.SetPosition(m_player.getPosition().X, m_player.getPosition().Y-0.25f);
+                                    
+                                }
+
+                            }
+
+
+
+                            //Check if it is a MARBLE
                             if (m_tiles[x, y] == MegaJump.Model.Level.Tile.T_MARBLE)
                             {
+                                
+
+
                                 //Get model coordinates for star
                                 Vector2 modelCoinCoordinates = new Vector2((float)x, (float)y);
 
@@ -249,57 +283,16 @@ namespace MegaJump.Model
                                     float modelX = modelPlayerCoordinates.X;
                                     float modelY = modelPlayerCoordinates.Y;
 
-                                    if (modelPlayerCoordinates.Y < modelCoinCoordinates.Y)
+                                    if (m_player.getPosition().X < 0.1)
                                     {
-                                        modelY = modelCoinCoordinates.Y - 1.02f;
-
-                                        if (modelPlayerCoordinates.X > modelCoinCoordinates.X - 1f && modelPlayerCoordinates.X < modelCoinCoordinates.X)
-                                        {
-                                            modelX = modelCoinCoordinates.X - 1.0f;
-                                        }
-                                        else if (modelPlayerCoordinates.X > modelCoinCoordinates.X + 0.7f)
-                                        {
-                                            modelX = modelCoinCoordinates.X + 1.0f;
-                                        }
+                                        m_player.SetPosition(m_player.getPosition().X + 8.5f, m_player.getPosition().Y);
+                                        int i;
                                     }
 
-                                    else if (modelPlayerCoordinates.Y > modelCoinCoordinates.Y)
+                                    if (m_player.getPosition().X > 8.9f)
                                     {
-                                        modelY = modelCoinCoordinates.Y + 1.02f;
-
-                                        if (modelPlayerCoordinates.X > modelCoinCoordinates.X - 1f && modelPlayerCoordinates.X < modelCoinCoordinates.X)
-                                        {
-                                            modelX = modelCoinCoordinates.X - 1.0f;
-                                        }
-                                        else if (modelPlayerCoordinates.X > modelCoinCoordinates.X + 0.7f)
-                                        {
-                                            modelX = modelCoinCoordinates.X + 1.0f;
-                                        }
+                                        m_player.SetPosition(m_player.getPosition().X - 8.5f, m_player.getPosition().Y);
                                     }
-
-                                    //else if (modelPlayerCoordinates.Y > modelCoinCoordinates.Y)
-                                    //{
-                                    //    modelY = modelCoinCoordinates.Y + 1.02f;
-                                    //}
-
-
-                                    //Check if MegaMan intersects at the right of brick
-
-
-                                    //Check if MegaMan intersects at the left of brick
-
-
-                                    m_player.SetPosition(modelX, modelY);
-                                    //Take away coin
-                                    //m_tiles[x, y] = MegaJump.Model.Level.Tile.T_EMPTY;
-                                    //Increase speed dramatically 
-                                    //(note: this is not what I want finally. I want a constant high speed with no gravity for a few seconds)
-                                    m_player.SetSpeed(0.0f, 0.0f);
-                                    //m_player.SetPosition(m_player.getPosition().X, m_player.getPosition().Y-0.25f);
-                                    //Let view know about collision
-                                    //I want another method for this in IModelObserver (play another sound+particle system bound to player to visualize speed)
-                                    //a_observer.CollisionPlayerCoin();
-
                                 }
 
                             }
@@ -318,6 +311,7 @@ namespace MegaJump.Model
                 if (m_levelAnnouncementTime < 5f)
                 {
                     a_observer.DrawAnnouncement(true);
+                    
                 }
 
                 else
@@ -343,6 +337,7 @@ namespace MegaJump.Model
             string currentLevelUrl = m_levels[m_currentLevel].getPath();
 
             m_levels[m_currentLevel].Initialize(currentLevelUrl);
+            
         }
 
         
@@ -453,6 +448,11 @@ namespace MegaJump.Model
         internal float getAccumulatedHeight()
         {
             return m_accumulatedHeight;
+        }
+
+        internal bool getClearedAllLevels()
+        {
+            return m_allLevelsCleared;
         }
     }
 }
