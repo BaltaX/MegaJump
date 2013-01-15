@@ -7,20 +7,20 @@ Content\Background.xnb
 Content\button.xnb
 Content\scoreboard.xnb
 Content\Megaman_dead.xnb
+Content\MenuBackground.xnb
+Content\LevelCleared.xnb
+Content\GameOver.xnb
+Content\BG_Sky.xnb
+Content\BG_Space.xnb
 Content\myFont.xnb
 Content\Courier New.xnb
+Content\MenuButtons.xnb
 Content\glass-clink.xnb
 Content\end.xnb
 Content\Bomb.xnb
-Content\Soundtrack2.xnb
 Content\Bricksound.xnb
-Content\MenuBackground.xnb
-Content\MenuButtons.xnb
-Content\LevelCleared.xnb
-Content\GameOver.xnb
 Content\nextLevel.xnb
-Content\BG_Sky.xnb
-Content\BG_Space.xnb
+Content\Soundtrack2.xnb
 Content\Soundtrack2.wma
 Content\Level1.txt
 Content\Levell1.txt

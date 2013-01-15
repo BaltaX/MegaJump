@@ -9,21 +9,22 @@ namespace MegaJump.View
     class Particle
     {
         //private Microsoft.Xna.Framework.Vector2 m_modelPosition;
-        private static Vector2 GRAVITY = new Vector2(0, 1f);
+        private Vector2 m_gravity;// = new Vector2(0, 1f);
         
         private Vector2 m_initialPosition; //To be abble to respawn with same position
         private Vector2 m_initialSpeed;    //To be able to respawn with same speed
         private Vector2 m_position;
         private Vector2 m_particleSpeed;
-        private List<Vector2> m_particleSpeeds=new List<Vector2>();
+        //private List<Vector2> m_particleSpeeds=new List<Vector2>();
 
-        public Particle(Vector2 a_modelPosition, Vector2 a_randomSpeed)
+        public Particle(Vector2 a_modelPosition, Vector2 a_speed, Vector2 a_gravity)
         {
             
-            m_particleSpeed = a_randomSpeed;
+            m_particleSpeed = a_speed;
             m_position = a_modelPosition;
-            m_initialSpeed = a_randomSpeed;
+            m_initialSpeed = a_speed;
             m_initialPosition = a_modelPosition;
+            m_gravity = a_gravity;
 
            
         }
@@ -32,7 +33,7 @@ namespace MegaJump.View
         {
             
                 //v1 = v0 + a *t
-                m_particleSpeed = m_particleSpeed + GRAVITY * (float)a_elapsedTimeTotalSeconds;
+                m_particleSpeed = m_particleSpeed + m_gravity * (float)a_elapsedTimeTotalSeconds;
 
                 //s1 = s0 + var * t
                 m_position = m_position + m_particleSpeed * (float)a_elapsedTimeTotalSeconds;

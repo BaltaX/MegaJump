@@ -93,14 +93,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GamePlayerParticles.exe" size="26112">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="GamePlayerParticles.exe" size="27136">
       <assemblyIdentity name="GamePlayerParticles" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>iJ5B9dnSRz9Zw2p10RLUhMiR7gk=</dsig:DigestValue>
+        <dsig:DigestValue>XD5YJx0bGtUlYWURmEPxAj9aNtI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -335,7 +335,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-      <dsig:DigestValue>zcRu7pI75crJc4N3sxyWh0q1fTY=</dsig:DigestValue>
+      <dsig:DigestValue>7Xd63LsIgp0iKnYDVLOgXoTrIjs=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Content\Soundtrack2.xnb" size="129">

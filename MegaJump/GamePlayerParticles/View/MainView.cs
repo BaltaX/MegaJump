@@ -52,6 +52,7 @@ namespace MegaJump.View
         ContentManager m_content;
         int m_currentLevel = 0;
         bool m_clearedAllLevels = false;
+        List<ParticleSystem> m_particleSystems = new List<ParticleSystem>();
         
 
         public MainView(GraphicsDevice a_graphicsDevice)
@@ -188,12 +189,15 @@ namespace MegaJump.View
                     m_spriteBatch.Draw(m_gameOverSign, gameOverDestRect, Color.White);
                 }
 
-                //if (m_drawParticleSystem)
-                //{
-                //    m_particleSystem = new ParticleSystem(new Vector2(1f, 12f), 1, m_content);
-                //    m_particleSystem.UpdateAndDraw(a_elapsedTimeTotalSeconds, m_spriteBatch, m_camera);
-                //    m_particleSystem.LoadContent(m_content);
-                //}
+                foreach (ParticleSystem particleSystem in m_particleSystems)
+                {
+                    //Only update if particle system is still alive
+                    if (particleSystem.getIsAlive())
+                    {
+                        particleSystem.UpdateAndDraw(a_elapsedTimeTotalSeconds, m_spriteBatch, m_camera, modelDisplacementY);
+                    }
+                
+                }
 
                 m_spriteBatch.End();
             }
@@ -234,10 +238,10 @@ namespace MegaJump.View
             m_soundEffect.Play(0.4f,(float)(rand.NextDouble())*1.2f-1f,0f);
         }
 
-        public void CollisionBomb()
+        public void CollisionBomb(Vector2 a_modelCoordinatesOfExplosion)
         {
             m_bomb.Play();
-            
+            m_particleSystems.Add(new ParticleSystem(a_modelCoordinatesOfExplosion, m_content));
         }
 
 
@@ -253,6 +257,7 @@ namespace MegaJump.View
             gameOver = false;
             m_currentLevel = 0;
             m_clearedAllLevels = false;
+            //m_particleSystems.Add(new ParticleSystem(new Vector2(7f,390f), m_content)); ****************Just for testing
         }
 
 

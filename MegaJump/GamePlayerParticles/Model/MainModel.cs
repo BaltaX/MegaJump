@@ -232,17 +232,17 @@ namespace MegaJump.Model
                                     m_tiles[x, y] = MegaJump.Model.Level.Tile.T_EMPTY;
                                     //Increase speed dramatically 
                                     //(note: this is not what I want finally. I want a constant high speed with no gravity for a few seconds)
-                                    m_player.SetSpeed(-m_player.getSpeed().X * 0.75f, -m_player.getSpeed().Y * 0.75f);
-                                    //m_player.SetPosition(m_player.getPosition().X, m_player.getPosition().Y-0.25f);
+                                                //m_player.SetSpeed(-m_player.getSpeed().X * 0.75f, -m_player.getSpeed().Y * 0.75f);
+                                    m_player.SetPosition(m_player.getPosition().X, m_player.getPosition().Y-0.25f);
                                     //Let view know about collision
                                     //I want another method for this in IModelObserver (play another sound+particle system bound to player to visualize speed)
-                                    a_observer.CollisionBomb();
+                                    a_observer.CollisionBomb(new Vector2(modelCoinCoordinates.X + 1.5f, modelCoinCoordinates.Y + 5.5f));
                                     m_gameOver = true;
                                 }
 
                             }
 
-                            //Check if it is a bomb
+                            //Check if it is a fog
                             if (m_tiles[x, y] == MegaJump.Model.Level.Tile.T_FOG)
                             {
                                 //Get model coordinates for star
@@ -388,7 +388,7 @@ namespace MegaJump.Model
 
         internal void makeMegamanFall()
         {
-            m_player.SetGravity(m_player.getGravity().X, 25f);
+            m_player.SetGravity(m_player.getGravity().X, -1f);
         }
 
         internal void StartGame()

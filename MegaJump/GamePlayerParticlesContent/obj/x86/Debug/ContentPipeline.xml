@@ -83,6 +83,51 @@
       <Time>2013-01-09T16:25:57+01:00</Time>
     </Item>
     <Item>
+      <Source>MenuBackground.png</Source>
+      <Name>MenuBackground</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\MenuBackground.xnb</Output>
+      <Time>2013-01-13T17:58:59.5752+01:00</Time>
+    </Item>
+    <Item>
+      <Source>LevelCleared.png</Source>
+      <Name>LevelCleared</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\LevelCleared.xnb</Output>
+      <Time>2013-01-13T16:04:43.5972+01:00</Time>
+    </Item>
+    <Item>
+      <Source>GameOver.png</Source>
+      <Name>GameOver</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\GameOver.xnb</Output>
+      <Time>2013-01-13T16:25:26.7462+01:00</Time>
+    </Item>
+    <Item>
+      <Source>BG_Sky.png</Source>
+      <Name>BG_Sky</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\BG_Sky.xnb</Output>
+      <Time>2013-01-13T20:32:59.0792+01:00</Time>
+    </Item>
+    <Item>
+      <Source>BG_Space.png</Source>
+      <Name>BG_Space</Name>
+      <Importer>TextureImporter</Importer>
+      <Processor>TextureProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\BG_Space.xnb</Output>
+      <Time>2013-01-13T20:59:07.0362+01:00</Time>
+    </Item>
+    <Item>
       <Source>myFont.spritefont</Source>
       <Name>myFont</Name>
       <Importer>FontDescriptionImporter</Importer>
@@ -99,6 +144,15 @@
       <Options>None</Options>
       <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\Courier New.xnb</Output>
       <Time>2013-01-13T10:55:47.3904+01:00</Time>
+    </Item>
+    <Item>
+      <Source>MenuButtons.spritefont</Source>
+      <Name>MenuButtons</Name>
+      <Importer>FontDescriptionImporter</Importer>
+      <Processor>FontDescriptionProcessor</Processor>
+      <Options>None</Options>
+      <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\MenuButtons.xnb</Output>
+      <Time>2013-01-13T10:56:09.7484+01:00</Time>
     </Item>
     <Item>
       <Source>glass-clink.wav</Source>
@@ -128,16 +182,6 @@
       <Time>2013-01-09T22:03:31.352+01:00</Time>
     </Item>
     <Item>
-      <Source>Soundtrack2.mp3</Source>
-      <Name>Soundtrack2</Name>
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\Soundtrack2.xnb</Output>
-      <Extra>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\Soundtrack2.wma</Extra>
-      <Time>2013-01-07T16:37:59.146+01:00</Time>
-    </Item>
-    <Item>
       <Source>Bricksound.wav</Source>
       <Name>Bricksound</Name>
       <Importer>WavImporter</Importer>
@@ -145,42 +189,6 @@
       <Options>None</Options>
       <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\Bricksound.xnb</Output>
       <Time>2013-01-13T08:57:11.7394+01:00</Time>
-    </Item>
-    <Item>
-      <Source>MenuBackground.png</Source>
-      <Name>MenuBackground</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\MenuBackground.xnb</Output>
-      <Time>2013-01-13T17:58:59.5752+01:00</Time>
-    </Item>
-    <Item>
-      <Source>MenuButtons.spritefont</Source>
-      <Name>MenuButtons</Name>
-      <Importer>FontDescriptionImporter</Importer>
-      <Processor>FontDescriptionProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\MenuButtons.xnb</Output>
-      <Time>2013-01-13T10:56:09.7484+01:00</Time>
-    </Item>
-    <Item>
-      <Source>LevelCleared.png</Source>
-      <Name>LevelCleared</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\LevelCleared.xnb</Output>
-      <Time>2013-01-13T16:04:43.5972+01:00</Time>
-    </Item>
-    <Item>
-      <Source>GameOver.png</Source>
-      <Name>GameOver</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\GameOver.xnb</Output>
-      <Time>2013-01-13T16:25:26.7462+01:00</Time>
     </Item>
     <Item>
       <Source>nextLevel.wav</Source>
@@ -192,22 +200,14 @@
       <Time>2013-01-13T16:52:11.6112+01:00</Time>
     </Item>
     <Item>
-      <Source>BG_Sky.png</Source>
-      <Name>BG_Sky</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
+      <Source>Soundtrack2.mp3</Source>
+      <Name>Soundtrack2</Name>
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
       <Options>None</Options>
-      <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\BG_Sky.xnb</Output>
-      <Time>2013-01-13T20:32:59.0792+01:00</Time>
-    </Item>
-    <Item>
-      <Source>BG_Space.png</Source>
-      <Name>BG_Space</Name>
-      <Importer>TextureImporter</Importer>
-      <Processor>TextureProcessor</Processor>
-      <Options>None</Options>
-      <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\BG_Space.xnb</Output>
-      <Time>2013-01-13T20:59:07.0362+01:00</Time>
+      <Output>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\Soundtrack2.xnb</Output>
+      <Extra>C:\Users\Kristian\Dropbox\Dokument\_Visual Studio\Spelprogrammering kod\Kod från 2012\Laborationer\MegaJump\MegaJump\GamePlayerParticles\bin\x86\Debug\Content\Soundtrack2.wma</Extra>
+      <Time>2013-01-07T16:37:59.146+01:00</Time>
     </Item>
     <BuildSuccessful>true</BuildSuccessful>
     <Settings>

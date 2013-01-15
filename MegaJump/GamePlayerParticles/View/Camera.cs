@@ -18,7 +18,7 @@ namespace MegaJump.View
 
             //Calculation of View coordinates
             int viewX = (int)(a_modelPosition.X * scaleX);
-            int viewY = (int)(a_modelPosition.Y * scaleY) ;
+            int viewY = (int)((a_modelPosition.Y-a_modelDisplacementY)*scaleY) ;
 
             return new Vector2(viewX, viewY);
 

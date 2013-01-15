@@ -165,7 +165,7 @@ namespace MegaJump
             else if (m_mainModel.getGameOver() && m_gameOver == false)
             {
                 m_mainView.GameEnd();
-                m_mainModel.makeMegamanFall();
+                //m_mainModel.makeMegamanFall();
                 m_gameOver = true;
                 m_gameOverTime = (float)gameTime.ElapsedGameTime.Milliseconds;
 
